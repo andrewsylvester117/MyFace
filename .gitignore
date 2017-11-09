@@ -33,6 +33,7 @@
 *.su
 *.idb
 *.pdb
+*.suo
 
 # Kernel Module Compile Results
 *.mod*
