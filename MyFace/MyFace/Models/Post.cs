@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 
@@ -10,7 +11,10 @@ namespace MyFace.Models
 		public int id { get; set; }
 		public string postheader {get; set;}
 		public string textcontent { get; set; }
-		public string imagepath { get; set; }
+		public Image imagecontent { get; set; }
+
+		public int likecount { get; set; }
+		public int dislikecount { get; set; }
 
 	}
 }
