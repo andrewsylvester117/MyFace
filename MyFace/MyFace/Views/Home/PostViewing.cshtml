@@ -1,4 +1,11 @@
 ﻿
 @model List<myFaceLib.Models.Post>
 
+<div>
+	<a href="/Home/AddPost">Add a post</a>
 
+	@foreach(myFaceLib.Models.Post p in Model)
+	{
+		Html.Partial("PostPartial", p);
+	}
+</div>

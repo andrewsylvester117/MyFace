@@ -43,9 +43,12 @@ namespace MyFace.Controllers
 		{
 			PostList.Add(p);
 
-
+			return View("PostViewing", PostList);
 		}
-
+		public ActionResult AddPost()
+		{
+			return View("PostForm");
+		}
 		public ActionResult MyProfile()
 		{
 
