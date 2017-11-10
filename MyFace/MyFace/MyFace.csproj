@@ -268,8 +268,14 @@
     <Content Include="Views\Post\PostPartial.cshtml" />
     <Content Include="Views\Post\PostForm.cshtml" />
     <Content Include="Views\Home\MyProfile.cshtml" />
+    <Content Include="Views\Home\PostViewing.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\myFaceLib\myFaceLib.csproj">
+      <Project>{df318f93-8d64-4efc-9760-a490dae2c750}</Project>
+      <Name>myFaceLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
   </ItemGroup>
