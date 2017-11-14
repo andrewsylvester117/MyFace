@@ -67,3 +67,6 @@ C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace
 C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\MyFace\obj\Debug\MyFace.csprojResolveAssemblyReference.cache
 C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\MyFace\obj\Debug\MyFace.dll
 C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\MyFace\obj\Debug\MyFace.pdb
+C:\Users\Banan\workspace\ProjectforProjects\MyFace\MyFace\MyFace\obj\Debug\MyFace.csprojResolveAssemblyReference.cache
+C:\Users\Banan\workspace\ProjectforProjects\MyFace\MyFace\MyFace\obj\Debug\MyFace.csproj.CoreCompileInputs.cache
+C:\Users\Banan\workspace\ProjectforProjects\MyFace\MyFace\MyFace\obj\Debug\MyFace.dll

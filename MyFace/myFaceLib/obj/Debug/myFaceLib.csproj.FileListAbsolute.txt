@@ -1,0 +1,2 @@
+C:\Users\Banan\workspace\ProjectforProjects\MyFace\MyFace\myFaceLib\obj\Debug\myFaceLib.csprojResolveAssemblyReference.cache
+C:\Users\Banan\workspace\ProjectforProjects\MyFace\MyFace\myFaceLib\obj\Debug\myFaceLib.csproj.CoreCompileInputs.cache
