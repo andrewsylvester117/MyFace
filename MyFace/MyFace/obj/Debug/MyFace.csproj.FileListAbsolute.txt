@@ -1,3 +1,7 @@
+C:\Users\Banan\workspace\ProjectforProjects\MyFace\MyFace\MyFace\obj\Debug\MyFace.csprojResolveAssemblyReference.cache
+C:\Users\Banan\workspace\ProjectforProjects\MyFace\MyFace\MyFace\obj\Debug\MyFace.csproj.CoreCompileInputs.cache
+C:\Users\Banan\workspace\ProjectforProjects\MyFace\MyFace\MyFace\obj\Debug\MyFace.dll
+C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\MyFace\obj\Debug\MyFace.csprojResolveAssemblyReference.cache
 C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\MyFace\bin\ApplicationInsights.config
 C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\MyFace\bin\MyFace.dll.config
 C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\MyFace\bin\MyFace.dll
@@ -26,6 +30,7 @@ C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace
 C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\MyFace\bin\Microsoft.Owin.Security.OAuth.dll
 C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\MyFace\bin\Microsoft.Owin.Security.Twitter.dll
 C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\MyFace\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\MyFace\bin\myFaceLib.dll
 C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\MyFace\bin\Newtonsoft.Json.dll
 C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\MyFace\bin\Owin.dll
 C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\MyFace\bin\System.Web.Helpers.dll
@@ -36,6 +41,8 @@ C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace
 C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\MyFace\bin\System.Web.WebPages.dll
 C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\MyFace\bin\System.Web.WebPages.Razor.dll
 C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\MyFace\bin\WebGrease.dll
+C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\MyFace\bin\myFaceLib.pdb
+C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\MyFace\bin\myFaceLib.dll.config
 C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\MyFace\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\MyFace\bin\System.Web.Helpers.xml
 C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\MyFace\bin\System.Web.Mvc.xml
@@ -64,9 +71,5 @@ C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace
 C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\MyFace\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\MyFace\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\MyFace\bin\Microsoft.AI.Web.xml
-C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\MyFace\obj\Debug\MyFace.csprojResolveAssemblyReference.cache
 C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\MyFace\obj\Debug\MyFace.dll
 C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\MyFace\obj\Debug\MyFace.pdb
-C:\Users\Banan\workspace\ProjectforProjects\MyFace\MyFace\MyFace\obj\Debug\MyFace.csprojResolveAssemblyReference.cache
-C:\Users\Banan\workspace\ProjectforProjects\MyFace\MyFace\MyFace\obj\Debug\MyFace.csproj.CoreCompileInputs.cache
-C:\Users\Banan\workspace\ProjectforProjects\MyFace\MyFace\MyFace\obj\Debug\MyFace.dll

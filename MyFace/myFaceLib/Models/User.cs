@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Web;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace myFaceLib.Models
 {
@@ -14,7 +15,7 @@ namespace myFaceLib.Models
 		public string password { get; set; }
 		public string status { get; set; }
 		public string dob { get; set; }
-		public Image image { get; set; }
+		//public Image image { get; set; }
 
 		//key: int address# value: string address value
 		public IDictionary<int,string> Addresses { get; set; }
