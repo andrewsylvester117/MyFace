@@ -269,6 +269,7 @@
     <Content Include="Views\Post\PostForm.cshtml" />
     <Content Include="Views\Home\MyProfile.cshtml" />
     <Content Include="Views\Home\PostViewing.cshtml" />
+    <Content Include="Views\Home\Friends.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\myFaceLib\myFaceLib.csproj">

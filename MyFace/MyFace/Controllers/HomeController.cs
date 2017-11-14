@@ -39,11 +39,14 @@ namespace MyFace.Controllers
 
 			return View("");
 		}
-		public ActionResult PostPost(Post p)
+		public void PostPost(Post p)
 		{
 			PostList.Add(p);
+		}
 
-
+		public ActionResult Friends()
+		{
+			return View();
 		}
 
 		public ActionResult MyProfile()
