@@ -43,3 +43,4 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+/MyFace/.vs/MyFace/v15/*.suo

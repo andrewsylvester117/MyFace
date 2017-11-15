@@ -1,5 +1,21 @@
-﻿@model MyFace.Models.User
+﻿@model myFaceLib.Models.User
+@{
+	ViewBag.Title = "Profile Page";
+}
 
 <div class="ProfilePageContainer">
-	<h1>@Model.realname</h1>
+	<div class="Username">
+			@*@Model.realname*@
+		<h1>Users Real Name</h1>
+	</div>
+
+	<div class="profilePictureContainer">
+		<div>
+			<img src="ProfilePicture" alt="Profile Picture Container" />
+		</div>
+	</div>
+
+	<div class="postfeed">
+
+	</div>
 </div>

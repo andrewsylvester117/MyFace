@@ -1,4 +1,60 @@
 ﻿body {
-	background-color: yellow;
-	color: purple;
+	background-color: black;
+	color: gray;
+}
+
+.sectionContainer{
+	text-align:center;
+}
+
+.page-header{
+	border-bottom: none;
+	display: inline-block;
+}
+
+	.page-header h1 {
+		font-family: "Brush Script MT", cursive;
+		font-size: 60px;
+	}
+	.page-header h2 {
+		font-family: "Brush Script MT", cursive;
+		font-size: 60px;
+	}
+
+.ProfilePageContainer{
+	text-align:center;
+}
+
+.profilePictureContainer{
+	height: 215px;
+	width: 195px;
+	border-radius: 10px;
+	margin: 15px auto; 
+	background-color: gray;
+	color: lightgray;
+}
+
+.Username{
+	margin:auto;	
+	display:inline-block;
+	margin-bottom: 55px;
+}
+
+.Username h1{
+	font-family: "Brush Script MT", cursive;
+	font-size: 60px;
+	display: inline-block;
+	margin:auto;
+}
+
+.FriendPageContainer{
+
+}
+
+.FriendContainer{
+	background-color: gray;
+	margin: auto;
+	margin-bottom: 25px;
+	height: 200px;
+	width: 75%;
 }
