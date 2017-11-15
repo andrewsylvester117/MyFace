@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MyFaceModelStoreContainer" CdmEntityContainer="MyFaceEntities">
+    <EntitySetMapping Name="Posts">
+      <EntityTypeMapping TypeName="MyFaceModel.Post">
+        <MappingFragment StoreEntitySet="Posts">
+          <ScalarProperty Name="postId" ColumnName="postId" />
+          <ScalarProperty Name="publisherId" ColumnName="publisherId" />
+          <ScalarProperty Name="postHeader" ColumnName="postHeader" />
+          <ScalarProperty Name="postText" ColumnName="postText" />
+          <ScalarProperty Name="postImage" ColumnName="postImage" />
+          <ScalarProperty Name="likeCount" ColumnName="likeCount" />
+          <ScalarProperty Name="dislikeCount" ColumnName="dislikeCount" />
+          <ScalarProperty Name="originalPostId" ColumnName="originalPostId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserFriends">
+      <EntityTypeMapping TypeName="MyFaceModel.UserFriend">
+        <MappingFragment StoreEntitySet="UserFriends">
+          <ScalarProperty Name="pkId" ColumnName="pkId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="friendId" ColumnName="friendId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="MyFaceModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="realName" ColumnName="realName" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="dateOfBirth" ColumnName="dateOfBirth" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="address1" ColumnName="address1" />
+          <ScalarProperty Name="adress2" ColumnName="adress2" />
+          <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="zodiacSign" ColumnName="zodiacSign" />
+          <ScalarProperty Name="prefferedSSN" ColumnName="prefferedSSN" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="isMaleGender" ColumnName="isMaleGender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
