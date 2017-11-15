@@ -52,8 +52,6 @@ namespace MyFace.Controllers
 
 		public ActionResult MyProfile()
 		{
-
-
 			return View();
 		}
 
