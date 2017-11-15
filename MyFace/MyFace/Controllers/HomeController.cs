@@ -32,17 +32,20 @@ namespace MyFace.Controllers
 
 		public ActionResult LikePost(int id)
 		{
-
+			Post p = PostList.Where(x => x.id == id).First();
+			p.likecount++;
 			return View("");
 		}
 		public ActionResult DislikePost(int id)
 		{
-
-			return View("");
+			Post p = PostList.Where(x => x.id == id).First();
+			p.dislikecount++;
+			return View("PostViewing");
 		}
-		public void PostPost(Post p)
+		public ActionResult PostPost(Post p)
 		{
 			PostList.Add(p);
+			return View("PostViewing");
 		}
 
 		public ActionResult Friends()

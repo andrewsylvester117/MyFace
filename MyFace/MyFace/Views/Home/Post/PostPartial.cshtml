@@ -1,0 +1,12 @@
+﻿@model MyFace.Models.Post
+
+<div class="Post">
+	<img href=@Model.imagecontent/>
+	<p>@Model.textcontent</p>
+	<div class="option bar">
+		@using (Html.BeginForm()){ 
+			<input type="submit" value="Like (@Model.likecount)" formmethod="post" formaction="LikePost"/>
+			<input type="submit" value="Dislike (@Model.dislikecount)" formmethod="post" formaction="DislikePost" />
+		}
+	</div>
+</div>
