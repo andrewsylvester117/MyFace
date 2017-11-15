@@ -1,3 +1,8 @@
+**/.vs/*
+**/packages/*
+**/bin/*
+**//obj/*
+
 # Prerequisites
 
 
