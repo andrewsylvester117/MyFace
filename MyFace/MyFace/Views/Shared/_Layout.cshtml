@@ -10,12 +10,7 @@
 
 </head>
 <body>
-	<div class="sectionContainer">
-		<div class="page-header">
-			<img src="~/Content/Images/MyFace Logo.png"	 alt="Image" />
-		</div>
-	</div>
-    <div class="navbar navbar-inverse">
+    <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -23,11 +18,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("myFace", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @*@Html.ActionLink("myFace", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+					<li><a href='@Url.Action("Index", "Home")'>
+						<img src="@Url.Content("~/Content/Images/MyFacelogo.png")"/>
+					</a></li>
                     <li>@Html.ActionLink("Friends", "Friends", "Home")</li>
                     <li>@Html.ActionLink("myProfile", "MyProfile", "Home")</li>
                 </ul>
@@ -36,7 +33,9 @@
         </div>
     </div>
     <div class="container body-content">
-        @RenderBody()
+		<div class="bodyStuff">
+			 @RenderBody()
+		</div>
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - .myFace</p>
