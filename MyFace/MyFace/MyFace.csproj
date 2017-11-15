@@ -270,6 +270,7 @@
     <Content Include="Views\Home\MyProfile.cshtml" />
     <Content Include="Views\Home\PostViewing.cshtml" />
     <Content Include="Views\Home\Friends.cshtml" />
+    <Content Include="Views\Home\CreateNewUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\myFaceLib\myFaceLib.csproj">

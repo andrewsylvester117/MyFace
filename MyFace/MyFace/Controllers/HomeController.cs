@@ -54,5 +54,26 @@ namespace MyFace.Controllers
 		{
 			return View();
 		}
+
+		/// <summary>
+		/// Get the view which adds a new user
+		/// </summary>		
+		[HttpGet]
+		public ActionResult CreateNewUser()
+		{
+			// show the form to create a user
+
+			return View(new User());
+		}
+
+
+		[HttpPost]
+		public ActionResult CreateNewUser(User model)
+		{
+			// add info/pictures if necessary
+
+			// save data to the service
+			return RedirectToAction("MyProfile", model);
+		}
 	}
 }
