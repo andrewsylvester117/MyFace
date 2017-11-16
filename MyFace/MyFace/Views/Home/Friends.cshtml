@@ -15,14 +15,34 @@
 
 	<div class="sectionContainer">
 		<div class="page-header">
-			<h2>
-				Recommended Friends
-			</h2>
-		</div>
-			<div class="FriendContainer">
+			<h2>Recommended Friends</h2>
 
-				<h2>Recommended Friends List</h2>
+
+		</div>
+		<div class="FriendContainer">
+			<h2>Current Friend List</h2>
+
+			@foreach (var friend in Model.Friends.Values) {
+				<div>
+					<div>
+						@Html.DisplayFor(model => friend.username)
+						@*@friend.username*@
+					</div>
+					<div>
+						(@Html.DisplayFor(model => friend.realname))
+						@*(@friend.realname)*@
+					</div>
+					<div>
+						@Html.DisplayFor(model => friend.gender)
+						@*@friend.gender*@
+					</div>
+					<div>
+						
+					</div>
+				</div>
+			}
 
 		</div>
 	</div>
+
 </div>
