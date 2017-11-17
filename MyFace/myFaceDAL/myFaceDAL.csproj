@@ -106,9 +106,9 @@
       <Project>{df318f93-8d64-4efc-9760-a490dae2c750}</Project>
       <Name>myFaceLib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MyFace\MyFace.csproj">
+    <ProjectReference Include="..\MyFace\myFace.csproj">
       <Project>{a18a3a22-ce0a-4179-88c5-021d4703f041}</Project>
-      <Name>MyFace</Name>
+      <Name>myFace</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
