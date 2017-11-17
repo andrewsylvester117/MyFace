@@ -43,3 +43,14 @@ C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace
 C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\myFaceDAL\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\myFaceDAL\obj\Debug\myFaceDAL.dll
 C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\myFaceDAL\obj\Debug\myFaceDAL.pdb
+C:\Users\Banan\workspace\ProjectforProjects\MyFace\MyFace\myFaceDAL\bin\Debug\myFaceDAL.dll.config
+C:\Users\Banan\workspace\ProjectforProjects\MyFace\MyFace\myFaceDAL\bin\Debug\myFaceDAL.dll
+C:\Users\Banan\workspace\ProjectforProjects\MyFace\MyFace\myFaceDAL\bin\Debug\myFaceDAL.pdb
+C:\Users\Banan\workspace\ProjectforProjects\MyFace\MyFace\myFaceDAL\bin\Debug\EntityFramework.dll
+C:\Users\Banan\workspace\ProjectforProjects\MyFace\MyFace\myFaceDAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Banan\workspace\ProjectforProjects\MyFace\MyFace\myFaceDAL\bin\Debug\EntityFramework.xml
+C:\Users\Banan\workspace\ProjectforProjects\MyFace\MyFace\myFaceDAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Banan\workspace\ProjectforProjects\MyFace\MyFace\myFaceDAL\obj\Debug\myFaceDAL.csprojResolveAssemblyReference.cache
+C:\Users\Banan\workspace\ProjectforProjects\MyFace\MyFace\myFaceDAL\obj\Debug\myFaceDAL.csproj.CoreCompileInputs.cache
+C:\Users\Banan\workspace\ProjectforProjects\MyFace\MyFace\myFaceDAL\obj\Debug\myFaceDAL.dll
+C:\Users\Banan\workspace\ProjectforProjects\MyFace\MyFace\myFaceDAL\obj\Debug\myFaceDAL.pdb

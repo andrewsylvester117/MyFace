@@ -9,7 +9,7 @@ using myFaceDAL;
 
 namespace myFaceLib.Services
 {
-	class PostService
+	public class PostService
 	{
 		public static void AddPost(myFaceLib.Models.Post p)
 		{
@@ -17,6 +17,7 @@ namespace myFaceLib.Services
 			{
 				using (var db = new MyFaceEntities())
 				{
+					
 					myFaceDAL.Post dbpost = new myFaceDAL.Post() {
 						postText = p.textcontent,
 						postImage = p.imagecontent,
@@ -44,6 +45,7 @@ namespace myFaceLib.Services
 			{
 				using (var db = new MyFaceEntities())
 				{
+					
 					myFaceDAL.Post dbpost = new myFaceDAL.Post()
 					{
 						postText = p.textcontent,
@@ -75,6 +77,7 @@ namespace myFaceLib.Services
 			List<Models.Post> outlist = new List<Models.Post>();
 			using(var db = new MyFaceEntities())
 			{
+
 				var q = db.Posts.Select(x => x).ToList();
 				foreach(myFaceDAL.Post p in q)
 				{

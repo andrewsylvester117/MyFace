@@ -5,12 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using myFaceLib.Services;
 
 namespace MyFace.Controllers
 {
 	public class HomeController : Controller
 	{
-		List<Post> PostList;
+		List<Post> PostList = PostService.MakePostList();
 		public ActionResult Index()
 		{
 			return View();
@@ -47,7 +48,10 @@ namespace MyFace.Controllers
 			PostList.Add(p);
 			return View("PostViewing");
 		}
-
+		public ActionResult ViewPosts()
+		{
+			return View("PostViewing");
+		}
 		public ActionResult Friends()
 		{
 			return View();

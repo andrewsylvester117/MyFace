@@ -273,12 +273,6 @@
     <Content Include="Views\Home\CreateNewUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\myFaceLib\myFaceLib.csproj">
-      <Project>{df318f93-8d64-4efc-9760-a490dae2c750}</Project>
-      <Name>myFaceLib</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
   </ItemGroup>
   <ItemGroup>
@@ -290,6 +284,12 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\myFaceLib\myFaceLib.csproj">
+      <Project>{df318f93-8d64-4efc-9760-a490dae2c750}</Project>
+      <Name>myFaceLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

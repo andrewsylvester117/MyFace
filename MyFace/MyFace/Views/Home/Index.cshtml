@@ -8,6 +8,11 @@
 		<h1>Status Feed</h1>
 	</div>
 	<div class="jumbotron">
+
+		
+		@{
+			Html.Partial("PostViewing", myFaceLib.Services.PostService.MakePostList());
+		}
 	</div>
 	<div class="row">
 

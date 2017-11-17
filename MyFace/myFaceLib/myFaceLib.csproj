@@ -99,8 +99,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\MyFaceServicable.cs" />
     <Compile Include="Services\MyFaceService.cs" />
+    <Compile Include="Services\PostService.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\myFaceDAL\myFaceDAL.csproj">
+      <Project>{8752eff5-edb0-41c7-8790-82e797c21b87}</Project>
+      <Name>myFaceDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
