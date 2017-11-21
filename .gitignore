@@ -2,6 +2,10 @@
 **/packages/*
 **/bin/*
 **/obj/*
+.vs/*
+packages/*
+bin/*
+obj/*
 
 # Prerequisites
 
