@@ -21,7 +21,7 @@ namespace MyFace.Controllers
 		{
 			ViewBag.Message = "Your application description page.";
 
-			return View();
+			return View("Post/PostForm");
 		}
 
 		public ActionResult Contact()
@@ -30,27 +30,34 @@ namespace MyFace.Controllers
 
 			return View();
 		}
-
-		public ActionResult LikePost(int id)
+        public ActionResult LikePost(int id)
 		{
 			Post p = PostList.Where(x => x.id == id).First();
 			p.likecount++;
-			return View("");
+            PostService.UpdatePost(p);
+            PostList = PostService.MakePostList();
+            return View("PostViewing", PostList);
 		}
-		public ActionResult DislikePost(int id)
+        public ActionResult DislikePost(int id)
 		{
 			Post p = PostList.Where(x => x.id == id).First();
 			p.dislikecount++;
-			return View("PostViewing");
+            PostService.UpdatePost(p);
+            PostList = PostService.MakePostList();
+            return View("PostViewing", PostList);
 		}
 		public ActionResult PostPost(Post p)
 		{
-			PostList.Add(p);
-			return View("PostViewing");
+            
+            PostService.AddPost(p,1);
+            PostList = PostService.MakePostList();
+
+			return View("PostViewing", PostList);
 		}
 		public ActionResult ViewPosts()
 		{
-			return View("PostViewing");
+            PostList = PostService.MakePostList();
+            return View("PostViewing", PostList);
 		}
 		public ActionResult Friends()
 		{

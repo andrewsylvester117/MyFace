@@ -54,3 +54,14 @@ C:\Users\Banan\workspace\ProjectforProjects\MyFace\MyFace\myFaceDAL\obj\Debug\my
 C:\Users\Banan\workspace\ProjectforProjects\MyFace\MyFace\myFaceDAL\obj\Debug\myFaceDAL.csproj.CoreCompileInputs.cache
 C:\Users\Banan\workspace\ProjectforProjects\MyFace\MyFace\myFaceDAL\obj\Debug\myFaceDAL.dll
 C:\Users\Banan\workspace\ProjectforProjects\MyFace\MyFace\myFaceDAL\obj\Debug\myFaceDAL.pdb
+C:\Users\Banan\workspace\ProjectforProjects\MyFace.git\MyFace\myFaceDAL\bin\Debug\myFaceDAL.dll.config
+C:\Users\Banan\workspace\ProjectforProjects\MyFace.git\MyFace\myFaceDAL\bin\Debug\myFaceDAL.dll
+C:\Users\Banan\workspace\ProjectforProjects\MyFace.git\MyFace\myFaceDAL\bin\Debug\myFaceDAL.pdb
+C:\Users\Banan\workspace\ProjectforProjects\MyFace.git\MyFace\myFaceDAL\bin\Debug\EntityFramework.dll
+C:\Users\Banan\workspace\ProjectforProjects\MyFace.git\MyFace\myFaceDAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Banan\workspace\ProjectforProjects\MyFace.git\MyFace\myFaceDAL\bin\Debug\EntityFramework.xml
+C:\Users\Banan\workspace\ProjectforProjects\MyFace.git\MyFace\myFaceDAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Banan\workspace\ProjectforProjects\MyFace.git\MyFace\myFaceDAL\obj\Debug\myFaceDAL.csprojResolveAssemblyReference.cache
+C:\Users\Banan\workspace\ProjectforProjects\MyFace.git\MyFace\myFaceDAL\obj\Debug\myFaceDAL.csproj.CoreCompileInputs.cache
+C:\Users\Banan\workspace\ProjectforProjects\MyFace.git\MyFace\myFaceDAL\obj\Debug\myFaceDAL.dll
+C:\Users\Banan\workspace\ProjectforProjects\MyFace.git\MyFace\myFaceDAL\obj\Debug\myFaceDAL.pdb

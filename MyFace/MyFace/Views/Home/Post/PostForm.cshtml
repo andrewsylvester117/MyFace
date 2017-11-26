@@ -1,13 +1,12 @@
 ﻿@model myFaceLib.Models.Post
 
 <div class="overlay">
-	@using(Html.BeginForm("PostPost","Home",FormMethod.Post,new { enctype = "multipart/form-data"})){
-		<div class="fdiv">				
-			Post Header: @Html.TextAreaFor(x => x.postheader) 
-			Post Text: @Html.TextAreaFor(x => x.textcontent)
+	@using(Html.BeginForm()){ 
+		<div class="fdiv">
+			Post Text
+			@Html.TextAreaFor(x => x.textcontent);
 			
 		</div>
-		<input type="file" value="Add Image" name="Image" typeof=""/>
 		<input type="submit" value="Post" formmethod="post" formaction="PostPost"/>
 	}
 </div>

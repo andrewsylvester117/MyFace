@@ -7,12 +7,26 @@
 	<div class="page-header">
 		<h1>Status Feed</h1>
 	</div>
-	<div class="jumbotron">
+    <a href="/Home/AddPost">Add a post</a>
+	<div class="jumbotron">                    
+         @{
+             List<myFaceLib.Models.Post> list = myFaceLib.Services.PostService.MakePostList();
 
-		
-		@{
-			Html.Partial("PostViewing", myFaceLib.Services.PostService.MakePostList());
-		}
+             foreach (myFaceLib.Models.Post p in list)
+             {
+                 
+                <div class="Post">
+                    <img href=@p.imagecontent />
+                    <p>@p.textcontent</p>
+                    <div class="option bar">
+                        
+                        <a href="/Home/LikePost?id=@p.id">Like</a>
+                        <a href="/Home/DislikePost?id=@p.id">Dislike</a>
+
+                    </div>
+                </div>
+             }
+        }   
 	</div>
 	<div class="row">
 
