@@ -53,3 +53,6 @@ Module.symvers
 Mkfile.old
 dkms.conf
 /MyFace/.vs/MyFace/v15/*.suo
+*.config
+MyFace/MyFace/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+MyFace/myFaceLib/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
