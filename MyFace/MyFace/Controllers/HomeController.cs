@@ -11,9 +11,10 @@ namespace MyFace.Controllers
 {
 	public class HomeController : Controller
 	{
-		List<Post> PostList = PostService.MakePostList();
+        List<Post> PostList = PostService.MakePostList();
 		public ActionResult Index()
 		{
+            
 			return View();
 		}
 
@@ -30,6 +31,10 @@ namespace MyFace.Controllers
 
 			return View();
 		}
+        public ActionResult AddPost()
+        {
+            return View("Post/PostForm");
+        }
         public ActionResult LikePost(int id)
 		{
 			Post p = PostList.Where(x => x.id == id).First();
@@ -54,10 +59,14 @@ namespace MyFace.Controllers
 
 			return View("PostViewing", PostList);
 		}
-		public ActionResult ViewPosts()
+		public ActionResult ViewPosts(int userid)
 		{
+
             PostList = PostService.MakePostList();
-            return View("PostViewing", PostList);
+            myFaceLib.Models.User cuser = (new MyFaceService()).GetUserByID(userid); //Might use User.Identity to get current user once I figure out how I want to get their id
+            List<Post> YourPosts = new List<Post>();
+            YourPosts = PostList.Where(x => x.publisherid == userid).ToList(); //Will be changed once I figure out how to get posts who's publisherid is one of their friends
+            return View("PostViewing", YourPosts);
 		}
 		public ActionResult Friends()
 		{

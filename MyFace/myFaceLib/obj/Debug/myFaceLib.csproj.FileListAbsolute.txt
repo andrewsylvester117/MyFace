@@ -212,7 +212,6 @@ C:\Users\Banan\workspace\ProjectforProjects\MyFace.git\MyFace\myFaceLib\bin\Debu
 C:\Users\Banan\workspace\ProjectforProjects\MyFace.git\MyFace\myFaceLib\bin\Debug\System.Collections.Immutable.dll
 C:\Users\Banan\workspace\ProjectforProjects\MyFace.git\MyFace\myFaceLib\bin\Debug\System.IO.Compression.dll
 C:\Users\Banan\workspace\ProjectforProjects\MyFace.git\MyFace\myFaceLib\bin\Debug\System.Net.Http.Formatting.dll
-C:\Users\Banan\workspace\ProjectforProjects\MyFace.git\MyFace\myFaceLib\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
 C:\Users\Banan\workspace\ProjectforProjects\MyFace.git\MyFace\myFaceLib\bin\Debug\System.Threading.Tasks.Dataflow.dll
 C:\Users\Banan\workspace\ProjectforProjects\MyFace.git\MyFace\myFaceLib\bin\Debug\System.Web.Helpers.dll
 C:\Users\Banan\workspace\ProjectforProjects\MyFace.git\MyFace\myFaceLib\bin\Debug\System.Web.Http.dll

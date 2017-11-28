@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="postId" />
     </Key>
-    <Property Name="postId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="postId" Type="Int32" Nullable="false" />
     <Property Name="publisherId" Type="Int32" Nullable="false" />
     <Property Name="postHeader" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="postText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -16,17 +16,27 @@
     <NavigationProperty Name="Post1" Relationship="Self.FK_Posts_Posts" FromRole="Posts1" ToRole="Posts" />
     <NavigationProperty Name="User" Relationship="Self.FK_Posts_Users" FromRole="Posts" ToRole="Users" />
   </EntityType>
+  <EntityType Name="UserFriend">
+    <Key>
+      <PropertyRef Name="pkId" />
+    </Key>
+    <Property Name="pkId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userId" Type="Int32" Nullable="false" />
+    <Property Name="friendId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK_UserFriends_Users" FromRole="UserFriends" ToRole="Users" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_Users_UserFriends" FromRole="UserFriends" ToRole="Users" />
+  </EntityType>
   <EntityType Name="User">
     <Key>
       <PropertyRef Name="userId" />
     </Key>
-    <Property Name="userId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userId" Type="Int32" Nullable="false" />
     <Property Name="realName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="dateOfBirth" Type="DateTime" Precision="0" />
-    <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
     <Property Name="address1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="adress2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="phoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -36,8 +46,8 @@
     <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="isMaleGender" Type="Boolean" />
     <NavigationProperty Name="Posts" Relationship="Self.FK_Posts_Users" FromRole="Users" ToRole="Posts" />
-    <NavigationProperty Name="Users1" Relationship="Self.UserFriends" FromRole="Users" ToRole="Users1" />
-    <NavigationProperty Name="Users" Relationship="Self.UserFriends" FromRole="Users1" ToRole="Users" />
+    <NavigationProperty Name="UserFriends" Relationship="Self.FK_UserFriends_Users" FromRole="Users" ToRole="UserFriends" />
+    <NavigationProperty Name="UserFriends1" Relationship="Self.FK_Users_UserFriends" FromRole="Users" ToRole="UserFriends" />
   </EntityType>
   <Association Name="FK_Posts_Posts">
     <End Role="Posts" Type="Self.Post" Multiplicity="0..1" />
@@ -63,12 +73,33 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="UserFriends">
-    <End Role="Users" Type="Self.User" Multiplicity="*" />
-    <End Role="Users1" Type="Self.User" Multiplicity="*" />
+  <Association Name="FK_UserFriends_Users">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="UserFriends" Type="Self.UserFriend" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="UserFriends">
+        <PropertyRef Name="friendId" />
+      </Dependent>
+    </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+  <Association Name="FK_Users_UserFriends">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="UserFriends" Type="Self.UserFriend" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="UserFriends">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MyFaceEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Posts" EntityType="Self.Post" />
+    <EntitySet Name="UserFriends" EntityType="Self.UserFriend" />
     <EntitySet Name="Users" EntityType="Self.User" />
     <AssociationSet Name="FK_Posts_Posts" Association="Self.FK_Posts_Posts">
       <End Role="Posts" EntitySet="Posts" />
@@ -78,9 +109,13 @@
       <End Role="Users" EntitySet="Users" />
       <End Role="Posts" EntitySet="Posts" />
     </AssociationSet>
-    <AssociationSet Name="UserFriends" Association="Self.UserFriends">
+    <AssociationSet Name="FK_UserFriends_Users" Association="Self.FK_UserFriends_Users">
       <End Role="Users" EntitySet="Users" />
-      <End Role="Users1" EntitySet="Users" />
+      <End Role="UserFriends" EntitySet="UserFriends" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_UserFriends" Association="Self.FK_Users_UserFriends">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserFriends" EntitySet="UserFriends" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

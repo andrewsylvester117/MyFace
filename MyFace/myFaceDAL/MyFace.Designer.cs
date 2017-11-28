@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Banan\workspace\ProjectforProjects\MyFace.git\MyFace\myFaceDAL\MyFace.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\AndrewSylvester117\Desktop\Quarter 5 Classes\Web Projects\MyFace\MyFace\myFaceDAL\MyFace.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

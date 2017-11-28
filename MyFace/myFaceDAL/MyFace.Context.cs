@@ -13,10 +13,10 @@ namespace myFaceDAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Entities : DbContext
+    public partial class MyFaceEntities : DbContext
     {
-        public Entities()
-            : base("name=Entities")
+        public MyFaceEntities()
+            : base("name=MyFaceEntities")
         {
         }
     
@@ -26,6 +26,7 @@ namespace myFaceDAL
         }
     
         public virtual DbSet<Post> Posts { get; set; }
+        public virtual DbSet<UserFriend> UserFriends { get; set; }
         public virtual DbSet<User> Users { get; set; }
     }
 }

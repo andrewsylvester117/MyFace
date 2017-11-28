@@ -16,7 +16,7 @@ namespace myFaceLib.Services
 			if(p != null)
 			{
                 
-				using (var db = new myFaceDAL.Entities())
+				using (var db = new myFaceDAL.MyFaceEntities())
 				{
                     myFaceDAL.Post dbp = new myFaceDAL.Post()
                     {
@@ -47,7 +47,7 @@ namespace myFaceLib.Services
 		{
 			if(p != null)
 			{
-				using (var db = new myFaceDAL.Entities())
+				using (var db = new myFaceDAL.MyFaceEntities())
 				{
 					
 					myFaceDAL.Post dbpost = new myFaceDAL.Post()
@@ -83,7 +83,7 @@ namespace myFaceLib.Services
 		public static List<Models.Post> MakePostList()
 		{
 			List<Models.Post> outlist = new List<Models.Post>();
-			using(var db = new myFaceDAL.Entities())
+			using(var db = new myFaceDAL.MyFaceEntities())
 			{
 
 				var q = db.Posts.Select(x => x).ToList();

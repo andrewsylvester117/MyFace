@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace myFaceLib.Services
 {
-	class MyFaceService : MyFaceServicable
+	public class MyFaceService : MyFaceServicable
 	{
 		public List<FriendList> GetAllFriends(User user)
 		{
