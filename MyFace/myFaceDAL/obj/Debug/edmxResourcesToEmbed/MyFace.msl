@@ -1,6 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="MyFaceModelStoreContainer" CdmEntityContainer="MyFaceEntities">
+  <EntityContainerMapping StorageEntityContainer="MyFaceModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Images">
+      <EntityTypeMapping TypeName="MyFaceModel.Image">
+        <MappingFragment StoreEntitySet="Image">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="postid" ColumnName="postid" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="data" ColumnName="data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Posts">
       <EntityTypeMapping TypeName="MyFaceModel.Post">
         <MappingFragment StoreEntitySet="Posts">
@@ -8,19 +18,9 @@
           <ScalarProperty Name="publisherId" ColumnName="publisherId" />
           <ScalarProperty Name="postHeader" ColumnName="postHeader" />
           <ScalarProperty Name="postText" ColumnName="postText" />
-          <ScalarProperty Name="postImage" ColumnName="postImage" />
           <ScalarProperty Name="likeCount" ColumnName="likeCount" />
           <ScalarProperty Name="dislikeCount" ColumnName="dislikeCount" />
           <ScalarProperty Name="originalPostId" ColumnName="originalPostId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="UserFriends">
-      <EntityTypeMapping TypeName="MyFaceModel.UserFriend">
-        <MappingFragment StoreEntitySet="UserFriends">
-          <ScalarProperty Name="pkId" ColumnName="pkId" />
-          <ScalarProperty Name="userId" ColumnName="userId" />
-          <ScalarProperty Name="friendId" ColumnName="friendId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -45,5 +45,13 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <AssociationSetMapping Name="UserFriends" TypeName="MyFaceModel.UserFriends" StoreEntitySet="UserFriends">
+      <EndProperty Name="Users">
+        <ScalarProperty Name="userId" ColumnName="friendId" />
+      </EndProperty>
+      <EndProperty Name="Users1">
+        <ScalarProperty Name="userId" ColumnName="userId" />
+      </EndProperty>
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

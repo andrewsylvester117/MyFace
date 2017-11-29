@@ -1,23 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="MyFaceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Image">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="postid" Type="int" />
+    <Property Name="filename" Type="nvarchar" MaxLength="50" />
+    <Property Name="data" Type="image" />
+  </EntityType>
   <EntityType Name="Posts">
     <Key>
       <PropertyRef Name="postId" />
     </Key>
-    <Property Name="postId" Type="int" Nullable="false" />
+    <Property Name="postId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="publisherId" Type="int" Nullable="false" />
     <Property Name="postHeader" Type="nvarchar" MaxLength="50" />
     <Property Name="postText" Type="nvarchar(max)" />
-    <Property Name="postImage" Type="image" />
     <Property Name="likeCount" Type="int" Nullable="false" />
     <Property Name="dislikeCount" Type="int" Nullable="false" />
     <Property Name="originalPostId" Type="int" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MyFace.dbo.UserFriends' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="UserFriends">
     <Key>
-      <PropertyRef Name="pkId" />
+      <PropertyRef Name="userId" />
+      <PropertyRef Name="friendId" />
     </Key>
-    <Property Name="pkId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="userId" Type="int" Nullable="false" />
     <Property Name="friendId" Type="int" Nullable="false" />
   </EntityType>
@@ -25,13 +35,13 @@
     <Key>
       <PropertyRef Name="userId" />
     </Key>
-    <Property Name="userId" Type="int" Nullable="false" />
+    <Property Name="userId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="realName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="userName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="status" Type="nvarchar" MaxLength="255" />
     <Property Name="dateOfBirth" Type="date" />
-    <Property Name="image" Type="image" Nullable="false" />
+    <Property Name="image" Type="image" />
     <Property Name="address1" Type="nvarchar" MaxLength="255" />
     <Property Name="adress2" Type="nvarchar" MaxLength="255" />
     <Property Name="phoneNumber" Type="nvarchar" MaxLength="50" />
@@ -41,6 +51,18 @@
     <Property Name="description" Type="nvarchar" MaxLength="500" />
     <Property Name="isMaleGender" Type="bit" />
   </EntityType>
+  <Association Name="FK_Image_Posts">
+    <End Role="Posts" Type="Self.Posts" Multiplicity="0..1" />
+    <End Role="Image" Type="Self.Image" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Posts">
+        <PropertyRef Name="postId" />
+      </Principal>
+      <Dependent Role="Image">
+        <PropertyRef Name="postid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Posts_Posts">
     <End Role="Posts" Type="Self.Posts" Multiplicity="0..1" />
     <End Role="Posts1" Type="Self.Posts" Multiplicity="*" />
@@ -90,9 +112,19 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="MyFaceModelStoreContainer">
+    <EntitySet Name="Image" EntityType="Self.Image" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Posts" EntityType="Self.Posts" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="UserFriends" EntityType="Self.UserFriends" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserFriends" EntityType="Self.UserFriends" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [UserFriends].[userId] AS [userId], 
+    [UserFriends].[friendId] AS [friendId]
+    FROM [dbo].[UserFriends] AS [UserFriends]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Image_Posts" Association="Self.FK_Image_Posts">
+      <End Role="Posts" EntitySet="Posts" />
+      <End Role="Image" EntitySet="Image" />
+    </AssociationSet>
     <AssociationSet Name="FK_Posts_Posts" Association="Self.FK_Posts_Posts">
       <End Role="Posts" EntitySet="Posts" />
       <End Role="Posts1" EntitySet="Posts" />

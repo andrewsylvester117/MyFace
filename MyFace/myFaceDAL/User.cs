@@ -18,8 +18,8 @@ namespace myFaceDAL
         public User()
         {
             this.Posts = new HashSet<Post>();
-            this.UserFriends = new HashSet<UserFriend>();
-            this.UserFriends1 = new HashSet<UserFriend>();
+            this.Users1 = new HashSet<User>();
+            this.Users = new HashSet<User>();
         }
     
         public int userId { get; set; }
@@ -41,8 +41,8 @@ namespace myFaceDAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Post> Posts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UserFriend> UserFriends { get; set; }
+        public virtual ICollection<User> Users1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UserFriend> UserFriends1 { get; set; }
+        public virtual ICollection<User> Users { get; set; }
     }
 }

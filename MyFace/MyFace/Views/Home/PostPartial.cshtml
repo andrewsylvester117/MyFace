@@ -1,20 +1,19 @@
 ﻿@model myFaceLib.Models.Post
 
 @{
-    List<myFaceLib.Models.Post> list = myFaceLib.Services.PostService.MakePostList();
 
-    foreach (myFaceLib.Models.Post p in list)
-    {
+
+
 
         <div class="Post">
-            <img href=@p.imagecontent />
-            <p>@p.textcontent</p>
+            <img href="~/Content/Images/@Model.imagefname" />
+            <p>@Model.textcontent</p>
             <div class="option bar">
 
-                <a href="/Home/LikePost?id=@p.id">Like</a>
-                <a href="/Home/DislikePost?id=@p.id">Dislike</a>
+                <a href="/Home/LikePost?id=@Model.id">Like</a>
+                <a href="/Home/DislikePost?id=@Model.id">Dislike</a>
 
             </div>
         </div>
-    }
+    
 }   

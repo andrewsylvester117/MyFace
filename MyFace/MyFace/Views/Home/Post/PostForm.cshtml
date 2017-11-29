@@ -1,7 +1,8 @@
 ﻿@model myFaceLib.Models.Post
 
 <div class="overlay">
-	@using(Html.BeginForm()){
+	@using (Html.BeginForm("PostPost", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{ 
         <h2>Make a Post</h2>
 		<div class="fdiv">
             Header
@@ -9,7 +10,7 @@
 			Text
 			@Html.TextAreaFor(x => x.textcontent)
 			Image
-            <input type="file" value="Browse..." formmethod="post" formaction="" />
+            <input type="file" value="Browse..." name="file"/>
 		</div>
 		<input type="submit" value="Post" formmethod="post" formaction="PostPost"/>
 	}

@@ -17,6 +17,7 @@ namespace myFaceDAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Post()
         {
+            this.Images = new HashSet<Image>();
             this.Posts1 = new HashSet<Post>();
         }
     
@@ -24,11 +25,12 @@ namespace myFaceDAL
         public int publisherId { get; set; }
         public string postHeader { get; set; }
         public string postText { get; set; }
-        public byte[] postImage { get; set; }
         public int likeCount { get; set; }
         public int dislikeCount { get; set; }
         public Nullable<int> originalPostId { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Image> Images { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Post> Posts1 { get; set; }
         public virtual Post Post1 { get; set; }

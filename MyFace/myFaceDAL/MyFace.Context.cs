@@ -13,10 +13,10 @@ namespace myFaceDAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MyFaceEntities : DbContext
+    public partial class Entities : DbContext
     {
-        public MyFaceEntities()
-            : base("name=MyFaceEntities")
+        public Entities()
+            : base("name=Entities")
         {
         }
     
@@ -25,8 +25,8 @@ namespace myFaceDAL
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Image> Images { get; set; }
         public virtual DbSet<Post> Posts { get; set; }
-        public virtual DbSet<UserFriend> UserFriends { get; set; }
         public virtual DbSet<User> Users { get; set; }
     }
 }

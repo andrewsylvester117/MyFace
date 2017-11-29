@@ -12,13 +12,13 @@ namespace myFaceDAL
     using System;
     using System.Collections.Generic;
     
-    public partial class UserFriend
+    public partial class Image
     {
-        public int pkId { get; set; }
-        public int userId { get; set; }
-        public int friendId { get; set; }
+        public int Id { get; set; }
+        public Nullable<int> postid { get; set; }
+        public string filename { get; set; }
+        public byte[] data { get; set; }
     
-        public virtual User User { get; set; }
-        public virtual User User1 { get; set; }
+        public virtual Post Post { get; set; }
     }
 }
