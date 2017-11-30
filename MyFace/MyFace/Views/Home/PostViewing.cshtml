@@ -4,8 +4,17 @@
 <div>
 	<a href="/Home/AddPost">Add a post</a>
 
-	@foreach(myFaceLib.Models.Post p in Model)
-	{
-		Html.Partial("PostPartial", p);
-	}
+	@foreach (myFaceLib.Models.Post p in Model)
+    {
+        <div class="Post">
+            <img src="~/Content/Images/@p.imagefname" />
+            <p>@p.textcontent</p>
+            <div class="option bar">
+
+                <a href="/Home/LikePost?id=@p.id">Like</a>
+                <a href="/Home/DislikePost?id=@p.id">Dislike</a>
+
+            </div>
+        </div>
+    }
 </div>

@@ -102,7 +102,7 @@ namespace myFaceLib.Services
 			List<Models.Post> outlist = new List<Models.Post>();
 			using(var db = new myFaceDAL.Entities())
 			{
-                LoadImagesToFiles(imgdirpath);
+                //LoadImagesToFiles(imgdirpath);
 				var q = db.Posts.Select(x => x).ToList();
 				foreach(myFaceDAL.Post p in q)
 				{
@@ -120,7 +120,7 @@ namespace myFaceLib.Services
                     
                     if (db.Images.Where(x => x.postid == p.postId).First()!= null)
                     {
-                        px.imagefname = imgdirpath + db.Images.Where(x => p.postId == x.postid).First().filename;
+                        px.imagefname = db.Images.Where(x => p.postId == x.postid).First().filename;
                     }
                     outlist.Add(px);
 				}
@@ -136,7 +136,8 @@ namespace myFaceLib.Services
                 {
                     if (!File.Exists(imgdirpath + i.filename))
                     {
-                        File.Create(imgdirpath + i.filename).Write(i.data, 0, 0);
+                        File.Create(imgdirpath + i.filename);
+                        File.WriteAllBytes(imgdirpath + i.filename, i.data);
                     }
                 }
             }
