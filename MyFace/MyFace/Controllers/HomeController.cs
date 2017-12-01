@@ -92,6 +92,9 @@ namespace MyFace.Controllers
 		}
 		public ActionResult Friends()
 		{
+			// get the friends list
+
+			// send it into the view
 			return View();
 		}
 
