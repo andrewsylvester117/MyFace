@@ -1,33 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Web;
 
-namespace myFaceLib.Models
+namespace MyFaceLib.Models
 {
 	public class User
 	{
-		public int id { get; set; }
-		public string username { get; set; }
-		public string realname { get; set; }
-		public string password { get; set; }
-		public string status { get; set; }
-		public string dob { get; set; }
-		public byte[] image { get; set; }
-		//public Image image { get; set; }
-
-		//key: int address# value: string address value
-		public IDictionary<int,string> Addresses { get; set; }
+		public int Id { get; set; }
+		public string RealName { get; set; }
+		public string UserName { get; set; }
+		public string Password { get; set; }
+		public string Email { get; set; }
+		public byte[] Image { get; set; }
+		public string Status { get; set; }
+		public DateTime? Dob { get; set; }
+		public string ZodiacSign { get; set; }
+		public string Address1 { get; set; }
+		public string Address2 { get; set; }
+		public string PhoneNumber { get; set; }
+		public string PrefferedSSN { get; set; }
+		public string Description { get; set; }
+		public bool? IsMaleGender { get; set; }
+		public IDictionary<int, User> Friends { get; set; }
 
 		//key: string type and number of info value: string value of info
 		public IDictionary<string, string> ContactInfo { get; set; }
 
-		public IDictionary<int, User> Friends { get; set; }
+		//key: int postId number: string text of post
+		public IDictionary<int, string> Posts { get; set; }
 
-		public string sign { get; set; }
-		public string gender { get; set; }
-		public string description { get; set; }
 
 
 

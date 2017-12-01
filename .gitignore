@@ -56,3 +56,12 @@ dkms.conf
 *.config
 MyFace/MyFace/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 MyFace/myFaceLib/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+
+MyFace/\.vs/
+
+MyFace/MyFace/bin/
+
+MyFace/MyFace/obj/
+
+MyFace/myFaceDAL/obj/
+
