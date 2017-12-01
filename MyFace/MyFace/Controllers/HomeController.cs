@@ -1,11 +1,11 @@
 ﻿using MyFace.Models;
-using myFaceLib.Models;
+using MyFaceLib.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using myFaceLib.Services;
+using MyFaceLib.Services;
 using System.Web.Hosting;
 using System.IO;
 
@@ -47,16 +47,16 @@ namespace MyFace.Controllers
         }
         public ActionResult LikePost(int id)
 		{
-			Post p = PostList.Where(x => x.id == id).First();
-			p.likecount++;
+			Post p = PostList.Where(x => x.Id == id).First();
+			p.Likecount++;
             PostService.UpdatePost(p,imgpath);
             PostList = PostService.MakePostList(imgpath);
             return View("PostViewing", PostList);
 		}
         public ActionResult DislikePost(int id)
 		{
-			Post p = PostList.Where(x => x.id == id).First();
-			p.dislikecount++;
+			Post p = PostList.Where(x => x.Id == id).First();
+			p.Dislikecount++;
             PostService.UpdatePost(p,imgpath);
             PostList = PostService.MakePostList(imgpath);
             return View("PostViewing", PostList);
@@ -76,7 +76,7 @@ namespace MyFace.Controllers
                     file.SaveAs(path);
                 }
             }
-            p.imagefname = fileName;
+            p.Imagefname = fileName;
             PostService.AddPost(px,1,imgpath);
             PostList = PostService.MakePostList(imgpath);
 			return View("PostViewing", PostList);

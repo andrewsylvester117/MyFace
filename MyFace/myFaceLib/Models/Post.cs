@@ -1,24 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Web;
-using static System.Net.Mime.MediaTypeNames;
-
-namespace myFaceLib.Models
+﻿namespace MyFaceLib.Models
 {
 	public class Post
 	{
-		public int publisherid { get; set; }
-		public int id { get; set; }
-		public int parentid { get; set; }
-		public string postheader {get; set;}
-		public string textcontent { get; set; }
-		public string imagefname { get; set; }
-
-		public int likecount { get; set; }
-		public int dislikecount { get; set; }
+		public int PublisherId { get; set; }
+		public int Id { get; set; }
+		public int Parentid { get; set; }
+		public string Postheader {get; set;}
+		public string Textcontent { get; set; }
+		public string Imagefname { get; set; }
+		public int Likecount { get; set; }
+		public int Dislikecount { get; set; }
 
 	}
 }

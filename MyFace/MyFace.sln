@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myFace", "MyFace\myFace.csproj", "{A18A3A22-CE0A-4179-88C5-021D4703F041}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFace", "MyFace\MyFace.csproj", "{A18A3A22-CE0A-4179-88C5-021D4703F041}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myFaceLib", "myFaceLib\myFaceLib.csproj", "{DF318F93-8D64-4EFC-9760-A490DAE2C750}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFaceLib", "myFaceLib\MyFaceLib.csproj", "{DF318F93-8D64-4EFC-9760-A490DAE2C750}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myFaceDAL", "myFaceDAL\myFaceDAL.csproj", "{8752EFF5-EDB0-41C7-8790-82E797C21B87}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFaceDAL", "myFaceDAL\MyFaceDAL.csproj", "{8752EFF5-EDB0-41C7-8790-82E797C21B87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

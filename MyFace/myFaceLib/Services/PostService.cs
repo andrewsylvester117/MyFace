@@ -1,45 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using myFaceLib;
-using myFaceLib.Models;
-using myFaceDAL;
+using MyFaceDAL;
 using System.IO;
 
-namespace myFaceLib.Services
+namespace MyFaceLib.Services
 {
 	public class PostService
 	{
-		public static void AddPost(myFaceLib.Models.Post p, int publisherid, string imgdirpath)
+		public static void AddPost(MyFaceLib.Models.Post p, int publisherid, string imgdirpath)
 		{
 			if(p != null)
 			{
                 
-				using (var db = new myFaceDAL.Entities())
+				using (var db = new MyFaceDAL.Entities())
 				{
                    
                    
-                    myFaceDAL.Post dbp = new myFaceDAL.Post()
+                    MyFaceDAL.Post dbp = new MyFaceDAL.Post()
                     {
-                        postText = p.textcontent,
+                        postText = p.Textcontent,
                         
-                        postHeader = p.postheader,
+                        postHeader = p.Postheader,
                         publisherId = publisherid,
-                        dislikeCount = p.dislikecount,
-                        likeCount = p.likecount,
-                        originalPostId = p.parentid,
+                        dislikeCount = p.Dislikecount,
+                        likeCount = p.Likecount,
+                        originalPostId = p.Parentid,
                     };
-                    if (p.parentid == 0)
+                    if (p.Parentid == 0)
                     {
                         dbp.originalPostId = null;
                     }
                     db.Posts.Add(dbp);
                     db.SaveChanges();
-                    if (!string.IsNullOrEmpty(p.imagefname))
+                    if (!string.IsNullOrEmpty(p.Imagefname))
                     {
-                        AddImage(imgdirpath, p.imagefname, db.Posts.Count() == 0 ? 1:db.Posts.Count());
+                        AddImage(imgdirpath, p.Imagefname, db.Posts.Count() == 0 ? 1:db.Posts.Count());
                     }
                     db.SaveChanges();
 				}
@@ -54,20 +49,20 @@ namespace myFaceLib.Services
 		{
 			if(p != null)
 			{
-				using (var db = new myFaceDAL.Entities())
+				using (var db = new MyFaceDAL.Entities())
 				{
                    
 
-                    myFaceDAL.Post dbpost = new myFaceDAL.Post()
+                    MyFaceDAL.Post dbpost = new MyFaceDAL.Post()
 					{
-						postText = p.textcontent,
-						postHeader = p.postheader,
+						postText = p.Textcontent,
+						postHeader = p.Postheader,
                         
-						postId = p.id,
-						publisherId = p.publisherid,
-						dislikeCount = p.dislikecount,
-						likeCount = p.likecount,
-						originalPostId = p.parentid,
+						postId = p.Id,
+						publisherId = p.PublisherId,
+						dislikeCount = p.Dislikecount,
+						likeCount = p.Likecount,
+						originalPostId = p.Parentid,
 					};
                     
                     var postp = db.Posts.Where(x => x.postId == dbpost.postId).First();
@@ -75,19 +70,19 @@ namespace myFaceLib.Services
 					postp.postHeader = dbpost.postHeader;
 					postp.likeCount = dbpost.likeCount;
 					postp.dislikeCount = dbpost.dislikeCount;
-                    if (p.parentid == 0)
+                    if (p.Parentid == 0)
                     {
                         postp.originalPostId = null;
                     }
                     
                     db.SaveChanges();
-                    if (!string.IsNullOrEmpty(imgdirpath) && p.imagefname != db.Images.Where(x => x.postid == dbpost.postId).First().filename)
+                    if (!string.IsNullOrEmpty(imgdirpath) && p.Imagefname != db.Images.Where(x => x.postid == dbpost.postId).First().filename)
                     {
-                        AddImage(imgdirpath, p.imagefname,postp.postId);
+                        AddImage(imgdirpath, p.Imagefname,postp.postId);
                     }
                     else
                     {
-                        UpdateImage(db.Images.Where(x => x.postid == dbpost.postId).First().Id, p.imagefname, imgdirpath);
+                        UpdateImage(db.Images.Where(x => x.postid == dbpost.postId).First().Id, p.Imagefname, imgdirpath);
                     }
                     db.SaveChanges();
                 }
@@ -100,27 +95,27 @@ namespace myFaceLib.Services
 		public static List<Models.Post> MakePostList(string imgdirpath)
 		{
 			List<Models.Post> outlist = new List<Models.Post>();
-			using(var db = new myFaceDAL.Entities())
+			using(var db = new MyFaceDAL.Entities())
 			{
                 //LoadImagesToFiles(imgdirpath);
 				var q = db.Posts.Select(x => x).ToList();
-				foreach(myFaceDAL.Post p in q)
+				foreach(MyFaceDAL.Post p in q)
 				{
                     Models.Post px = new Models.Post()
                     {
-                        id = p.postId,
-                        parentid = p.originalPostId == null ? 0 : p.originalPostId.Value,
+                        Id = p.postId,
+                        Parentid = p.originalPostId == null ? 0 : p.originalPostId.Value,
 
-                        dislikecount = p.dislikeCount,
-                        likecount = p.likeCount,
-                        publisherid = p.publisherId,
-                        postheader = p.postHeader,
-                        textcontent = p.postText
+                        Dislikecount = p.dislikeCount,
+                        Likecount = p.likeCount,
+                        PublisherId = p.publisherId,
+                        Postheader = p.postHeader,
+                        Textcontent = p.postText
                     };
                     
                     if (db.Images.Where(x => x.postid == p.postId).First()!= null)
                     {
-                        px.imagefname = db.Images.Where(x => p.postId == x.postid).First().filename;
+                        px.Imagefname = db.Images.Where(x => p.postId == x.postid).First().filename;
                     }
                     outlist.Add(px);
 				}
@@ -130,7 +125,7 @@ namespace myFaceLib.Services
 		}
         public static void LoadImagesToFiles(string imgdirpath)
         {
-            using(var db = new myFaceDAL.Entities())
+            using(var db = new MyFaceDAL.Entities())
             {
                 foreach(Image i in db.Images)
                 {
@@ -144,9 +139,9 @@ namespace myFaceLib.Services
         }
         public static void AddImage(string imgdirpath, string filename, int postid)
         {
-            using(var db = new myFaceDAL.Entities())
+            using(var db = new MyFaceDAL.Entities())
             {
-                myFaceDAL.Image img = new myFaceDAL.Image()
+                MyFaceDAL.Image img = new MyFaceDAL.Image()
                 {
                     filename = filename,
                     data = File.ReadAllBytes(imgdirpath + filename),
@@ -159,7 +154,7 @@ namespace myFaceLib.Services
         }
         public static void UpdateImage(int imageid, string filename, string imgdirpath)
         {
-            using(var db = new myFaceDAL.Entities())
+            using(var db = new MyFaceDAL.Entities())
             {
                 Image i = db.Images.Where(x => x.Id == imageid).First();
                 i.filename = filename;
