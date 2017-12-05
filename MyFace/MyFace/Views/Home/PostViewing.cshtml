@@ -1,19 +1,19 @@
 ﻿
-@model List<myFaceLib.Models.Post>
+@model List<MyFaceLib.Models.Post>
 
 <div>
 	<a href="/Home/AddPost">Add a post</a>
 
-	@foreach (myFaceLib.Models.Post p in Model)
+	@foreach (MyFaceLib.Models.Post p in Model)
     {
         <div class="Post">
-            <h4>@p.postheader</h4>
-            <img src="~/Content/Images/@p.imagefname" />
-            <p>@p.textcontent</p>
+            <h4>@p.Postheader</h4>
+            <img src="~/Content/Images/@p.Imagefname" />
+            <p>@p.Textcontent</p>
             <div class="option bar">
 
-                <a href="/Home/LikePost?id=@p.id">Like</a>
-                <a href="/Home/DislikePost?id=@p.id">Dislike</a>
+                <a href="/Home/LikePost?id=@p.Id">Like</a>
+                <a href="/Home/DislikePost?id=@p.Id">Dislike</a>
 
             </div>
         </div>

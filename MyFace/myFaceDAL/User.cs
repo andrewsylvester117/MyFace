@@ -32,7 +32,7 @@ namespace MyFaceDAL
         public Nullable<System.DateTime> dateOfBirth { get; set; }
         public string zodiacSign { get; set; }
         public string address1 { get; set; }
-        public string address2 { get; set; }
+        public string adress2 { get; set; }
         public string phoneNumber { get; set; }
         public string prefferedSSN { get; set; }
         public string description { get; set; }

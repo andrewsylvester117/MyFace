@@ -8,6 +8,8 @@ using System.Web.Mvc;
 using MyFaceLib.Services;
 using System.Web.Hosting;
 using System.IO;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace MyFace.Controllers
 {
@@ -92,10 +94,11 @@ namespace MyFace.Controllers
 		}
 		public ActionResult Friends()
 		{
-			// get the friends list
-
-			// send it into the view
-			return View();
+            // get the friends list
+            MyFaceLib.Models.User self = MyFaceLib.Services.MyFaceService.GetUserByEmail(User.Identity.GetUserName());
+            List<User> UsersFriends = MyFaceLib.Services.MyFaceService.GetAllFriends(self);
+ 			// send it into the view
+			return View("Friends",UsersFriends);
 		}
 
 		public ActionResult MyProfile()
@@ -111,15 +114,15 @@ namespace MyFace.Controllers
 		{
 			// show the form to create a user
 
-			return View(new User());
+			return View();
 		}
 
 
 		[HttpPost]
 		public ActionResult CreateNewUser(User model)
 		{
-			// add info/pictures if necessary
-
+            // add info/pictures if necessary
+            MyFaceLib.Services.MyFaceService.CreateNewUser(model);
 			// save data to the service
 			return RedirectToAction("MyProfile", model);
 		}

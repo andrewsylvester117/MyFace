@@ -30,7 +30,7 @@
 				dateOfBirth = libUser.Dob,
 				zodiacSign = libUser.ZodiacSign,
 				address1 = libUser.Address1,
-				address2 = libUser.Address2,
+				adress2 = libUser.Address2,
 				phoneNumber = libUser.PhoneNumber,
 				prefferedSSN = libUser.PrefferedSSN,
 				description = libUser.Description,
@@ -61,7 +61,7 @@
 			baseModel.dateOfBirth = libUser.Dob;
 			baseModel.zodiacSign = libUser.ZodiacSign;
 			baseModel.address1 = libUser.Address1;
-			baseModel.address2 = libUser.Address2;
+			baseModel.adress2 = libUser.Address2;
 			baseModel.phoneNumber = libUser.PhoneNumber;
 			baseModel.prefferedSSN = libUser.PrefferedSSN;
 			baseModel.description = libUser.Description;
@@ -91,7 +91,7 @@
 				Dob = dalUser.dateOfBirth,
 				ZodiacSign = dalUser.zodiacSign,
 				Address1 = dalUser.address1,
-				Address2 = dalUser.address2,
+				Address2 = dalUser.adress2,
 				PhoneNumber = dalUser.phoneNumber,
 				PrefferedSSN = dalUser.prefferedSSN,
 				Description = dalUser.description,
@@ -126,7 +126,7 @@
 			baseModel.Dob = dalUser.dateOfBirth;
 			baseModel.ZodiacSign = dalUser.zodiacSign;
 			baseModel.Address1 = dalUser.address1;
-			baseModel.Address2 = dalUser.address2;
+			baseModel.Address2 = dalUser.adress2;
 			baseModel.PhoneNumber = dalUser.phoneNumber;
 			baseModel.PrefferedSSN = dalUser.prefferedSSN;
 			baseModel.Description = dalUser.description;
