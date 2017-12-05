@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace MyFaceLib.Models
 {
@@ -12,6 +13,8 @@ namespace MyFaceLib.Models
 		public string Email { get; set; }
 		public byte[] Image { get; set; }
 		public string Status { get; set; }
+
+		[RegularExpression(@"(^$)|(^\d{2}/\d{2}/\d{4})|(^((\d{1})|(\d{2}))/((\d{1})|(\d{2}))/(\d{4}))", ErrorMessage = "Try the format: mm/dd/yyyy")]
 		public DateTime? Dob { get; set; }
 		public string ZodiacSign { get; set; }
 		public string Address1 { get; set; }

@@ -87,9 +87,7 @@ namespace MyFace.Controllers
 					if (service.GetUserByEmail(model.Email) == null)
 					{
 						// redirect user to supply myface info
-
-						// add the user to the db
-
+						return RedirectToAction("CreateNewUser", "Home");
 					}					
 
 					return RedirectToLocal(returnUrl);
@@ -176,7 +174,7 @@ namespace MyFace.Controllers
 					// var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
 					// await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-					return RedirectToAction("CreateNewUser", "Home", new MyFaceLib.Models.User());
+					return RedirectToAction("CreateNewUser", "Home");
 				}
 				AddErrors(result);
 			}

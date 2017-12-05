@@ -90,13 +90,15 @@ namespace MyFaceLib.Services
 					var query = dataContext.Users.Select(contextUser => contextUser);
 
 					// try to get the currently logged in user from our custom users table by email
-					IQueryable<MyFaceDAL.User> user = query.Where(contextUser => contextUser.email == email);
+					IQueryable<MyFaceDAL.User> dbUser = query.Where(contextUser => contextUser.email == email);
 
 					// if user is found
-					if (user != null)
+					if (dbUser.Count() != 0)
 					{
+						var theUser = dbUser.First();
+
 						// get and return the user
-						return user.First().CreateLibUser();
+						return theUser.CreateLibUser();
 					}
 
 					// did not find the user
@@ -115,8 +117,8 @@ namespace MyFaceLib.Services
 		public bool CreateNewUser( User newUser )
 		{
 			// try/catch for error catching
-			try
-			{
+			//try
+			//{
 				// create the db user
 				MyFaceDAL.User dbUser = new MyFaceDAL.User();
 
@@ -127,6 +129,7 @@ namespace MyFaceLib.Services
 				using (var dataContext = new MyFaceDAL.Entities())
 				{
 					// add user to db
+					dbUser.userId = dataContext.Users.Max(u => u.userId) + 1;
 					dataContext.Users.Add(dbUser);
 
 					// save
@@ -135,15 +138,15 @@ namespace MyFaceLib.Services
 
 				// added with success
 				return true;
-			}
-			catch (Exception e)
-			{
-				// consume
-				Console.WriteLine(e.StackTrace);
+			//}
+			//catch (Exception e)
+			//{
+			//	// consume
+			//	Console.WriteLine(e.StackTrace);
 
-				// failed to add
-				return false;
-			}
+			//	// failed to add
+			//	return false;
+			//}
 		}
 	}
 }
