@@ -1,11 +1,11 @@
 ﻿using MyFace.Models;
-using myFaceLib.Models;
+using MyFaceLib.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using myFaceLib.Services;
+using MyFaceLib.Services;
 using System.Web.Hosting;
 using System.IO;
 
@@ -47,16 +47,16 @@ namespace MyFace.Controllers
         }
         public ActionResult LikePost(int id)
 		{
-			Post p = PostList.Where(x => x.id == id).First();
-			p.likecount++;
+			Post p = PostList.Where(x => x.Id == id).First();
+			p.Likecount++;
             PostService.UpdatePost(p,imgpath);
             PostList = PostService.MakePostList(imgpath);
             return View("PostViewing", PostList);
 		}
         public ActionResult DislikePost(int id)
 		{
-			Post p = PostList.Where(x => x.id == id).First();
-			p.dislikecount++;
+			Post p = PostList.Where(x => x.Id == id).First();
+			p.Dislikecount++;
             PostService.UpdatePost(p,imgpath);
             PostList = PostService.MakePostList(imgpath);
             return View("PostViewing", PostList);
@@ -76,7 +76,7 @@ namespace MyFace.Controllers
                     file.SaveAs(path);
                 }
             }
-            p.imagefname = fileName;
+            p.Imagefname = fileName;
             PostService.AddPost(px,1,imgpath);
             PostList = PostService.MakePostList(imgpath);
 			return View("PostViewing", PostList);
@@ -92,6 +92,9 @@ namespace MyFace.Controllers
 		}
 		public ActionResult Friends()
 		{
+			// get the friends list
+
+			// send it into the view
 			return View();
 		}
 
@@ -115,9 +118,28 @@ namespace MyFace.Controllers
 		[HttpPost]
 		public ActionResult CreateNewUser(User model)
 		{
-			// add info/pictures if necessary
+			// stand up the resources
+			MyFaceService service = new MyFaceService();
+
+			var results = Request.Form.AllKeys;
+			// results =  1 realname, 2 status, 3 dob, 4 zodiak, 5 isMale, 6 descr
+
+			model.RealName = Request.Form.Get(1);
+			model.Status = Request.Form.Get(2);
+			DateTime.TryParse(Request.Form.Get(3), out DateTime dob);			
+			model.ZodiacSign = Request.Form.Get(4) as string;
+			model.IsMaleGender = bool.Parse(Request.Form.Get(5));
+			model.Description = Request.Form.Get(6) as string;
+			model.UserName = User.Identity.Name;
+
+			// dummy data
+			model.Password = "hello";
+			model.PrefferedSSN = "232-45-0293";
+			model.Email = model.UserName;
 
 			// save data to the service
+			service.CreateNewUser(model);
+
 			return RedirectToAction("MyProfile", model);
 		}
 

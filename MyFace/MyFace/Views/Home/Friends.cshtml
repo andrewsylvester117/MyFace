@@ -1,4 +1,4 @@
-﻿@model myFaceLib.Models.User
+﻿@model List<MyFaceLib.Models.User>
 <div class="FriendPageContainer">
 
 	<div class="sectionContainer">
@@ -22,19 +22,16 @@
 		<div class="FriendContainer">
 			<h2>Current Friend List</h2>
 
-			@foreach (var friend in Model.Friends.Values) {
+			@foreach (var friend in Model) {
 				<div>
 					<div>
-						@Html.DisplayFor(model => friend.username)
-						@*@friend.username*@
+						@Html.DisplayFor(model => friend.UserName)
 					</div>
 					<div>
-						(@Html.DisplayFor(model => friend.realname))
-						@*(@friend.realname)*@
+						(@Html.DisplayFor(model => friend.RealName))
 					</div>
 					<div>
-						@Html.DisplayFor(model => friend.gender)
-						@*@friend.gender*@
+						@Html.DisplayFor(model => friend.Email)
 					</div>
 					<div>
 						

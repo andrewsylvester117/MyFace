@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace myFaceDAL
+namespace MyFaceDAL
 {
     using System;
     using System.Collections.Generic;
@@ -26,14 +26,14 @@ namespace myFaceDAL
         public string realName { get; set; }
         public string userName { get; set; }
         public string password { get; set; }
+        public string email { get; set; }
+        public byte[] image { get; set; }
         public string status { get; set; }
         public Nullable<System.DateTime> dateOfBirth { get; set; }
-        public byte[] image { get; set; }
+        public string zodiacSign { get; set; }
         public string address1 { get; set; }
         public string adress2 { get; set; }
         public string phoneNumber { get; set; }
-        public string email { get; set; }
-        public string zodiacSign { get; set; }
         public string prefferedSSN { get; set; }
         public string description { get; set; }
         public Nullable<bool> isMaleGender { get; set; }
@@ -44,5 +44,6 @@ namespace myFaceDAL
         public virtual ICollection<User> Users1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<User> Users { get; set; }
-    }
+
+	}
 }

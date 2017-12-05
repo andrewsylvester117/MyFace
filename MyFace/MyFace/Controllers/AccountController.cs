@@ -79,6 +79,17 @@ namespace MyFace.Controllers
 			switch (result)
 			{
 				case SignInStatus.Success:
+					// user successfully logged in
+					// make sure they exist in our data tables
+					MyFaceLib.Services.MyFaceService service = new MyFaceLib.Services.MyFaceService();
+
+					// check to see if the user exist
+					if (service.GetUserByEmail(model.Email) == null)
+					{
+						// redirect user to supply myface info
+						return RedirectToAction("CreateNewUser", "Home");
+					}					
+
 					return RedirectToLocal(returnUrl);
 				case SignInStatus.LockedOut:
 					return View("Lockout");
@@ -163,7 +174,7 @@ namespace MyFace.Controllers
 					// var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
 					// await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-					return RedirectToAction("CreateNewUser", "Home", new myFaceLib.Models.User());
+					return RedirectToAction("CreateNewUser", "Home");
 				}
 				AddErrors(result);
 			}

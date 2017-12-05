@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace myFaceDAL
+namespace MyFaceDAL
 {
     using System;
     using System.Data.Entity;

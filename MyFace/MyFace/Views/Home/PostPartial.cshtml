@@ -1,4 +1,4 @@
-﻿@model myFaceLib.Models.Post
+﻿@model MyFaceLib.Models.Post
 
 @{
 
@@ -6,12 +6,12 @@
 
 
         <div class="Post">
-            <img href="~/Content/Images/@Model.imagefname" />
-            <p>@Model.textcontent</p>
+            <img href="~/Content/Images/@Model.Imagefname" />
+            <p>@Model.Textcontent</p>
             <div class="option bar">
 
-                <a href="/Home/LikePost?id=@Model.id">Like</a>
-                <a href="/Home/DislikePost?id=@Model.id">Dislike</a>
+                <a href="/Home/LikePost?id=@Model.Id">Like</a>
+                <a href="/Home/DislikePost?id=@Model.Id">Dislike</a>
 
             </div>
         </div>
