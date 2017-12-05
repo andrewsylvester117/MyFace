@@ -7,6 +7,7 @@
 	@foreach (myFaceLib.Models.Post p in Model)
     {
         <div class="Post">
+            <h4>@p.postheader</h4>
             <img src="~/Content/Images/@p.imagefname" />
             <p>@p.textcontent</p>
             <div class="option bar">
