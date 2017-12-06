@@ -1,0 +1,19 @@
+﻿@model MyFaceLib.Models.User
+
+<h2>Recommended Friends</h2>
+
+@foreach (var friend in Model)
+{
+    <div>
+        <div>
+            @Html.DisplayFor(model => friend.UserName)
+        </div>
+        <div>
+            (@Html.DisplayFor(model => friend.RealName))
+        </div>
+        <div>
+            @Html.DisplayFor(model => friend.Email)
+        </div>
+        <div>
+
+        </div>

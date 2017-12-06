@@ -273,6 +273,7 @@
     <Content Include="Views\Home\CreateNewUser.cshtml" />
     <Content Include="Views\Home\Post\PostForm.cshtml" />
     <Content Include="Views\Home\PostPartial.cshtml" />
+    <Content Include="Views\Home\RecommendFriends.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

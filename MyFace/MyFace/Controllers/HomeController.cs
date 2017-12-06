@@ -97,7 +97,12 @@ namespace MyFace.Controllers
 			// send it into the view
 			return View();
 		}
+        public ActionResult RecommendFriends()
+        {
 
+
+            return View();
+        }
 		public ActionResult MyProfile()
 		{
 			return View();
