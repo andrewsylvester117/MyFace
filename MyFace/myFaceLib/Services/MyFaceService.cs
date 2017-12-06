@@ -23,7 +23,7 @@ namespace MyFaceLib.Services
 			using (var dataContext = new MyFaceDAL.Entities())
 			{
 				// get the DAL User
-				var dataContextUser = dataContext.Users.Where(theUser => theUser.userName == user.UserName).First();
+				var dataContextUser = dataContext.Users.Where(theUser => theUser.userName == userName).First();
 
 				// get the dictionary of friends
 				var friendCollection = dataContextUser.CreateLibUser().Friends;

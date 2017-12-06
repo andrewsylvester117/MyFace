@@ -81,10 +81,9 @@ namespace MyFace.Controllers
 				case SignInStatus.Success:
 					// user successfully logged in
 					// make sure they exist in our data tables
-					MyFaceLib.Services.MyFaceService service = new MyFaceLib.Services.MyFaceService();
 
 					// check to see if the user exist
-					if (service.GetUserByEmail(model.Email) == null)
+					if (MyFaceLib.Services.MyFaceService.GetUserByEmail(model.Email) == null)
 					{
 						// redirect user to supply myface info
 						return RedirectToAction("CreateNewUser", "Home");
