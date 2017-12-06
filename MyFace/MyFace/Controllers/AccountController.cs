@@ -1,7 +1,4 @@
-﻿using System;
-using System.Globalization;
-using System.Linq;
-using System.Security.Claims;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -81,7 +78,6 @@ namespace MyFace.Controllers
 				case SignInStatus.Success:
 					// user successfully logged in
 					// make sure they exist in our data tables
-					MyFaceLib.Services.MyFaceService service = new MyFaceLib.Services.MyFaceService();
 
 					// check to see if the user exist
 					if (MyFaceLib.Services.MyFaceService.GetUserByEmail(model.Email) == null)

@@ -10,7 +10,7 @@ namespace MyFaceLib.Services
 	/// A service layer to facilitate communication 
 	/// between the data context and the view
 	/// </summary>
-	public class MyFaceService 
+	public class MyFaceService
 	{	
 		/// <summary>
 		/// Gets the list of friends based on the passed in user
