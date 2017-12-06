@@ -118,7 +118,9 @@ namespace MyFace.Controllers
 		[HttpPost]
 		public ActionResult CreateNewUser(User model)
 		{
+			var results = Request.Form.AllKeys;
 			// results =  1 realname, 2 status, 3 dob, 4 zodiak, 5 isMale, 6 descr
+
 			model.RealName = Request.Form.Get(1);
 			model.Status = Request.Form.Get(2);
 			DateTime.TryParse(Request.Form.Get(3), out DateTime dob);			
@@ -136,6 +138,22 @@ namespace MyFace.Controllers
 			MyFaceService.CreateNewUser(model);
 
 			return RedirectToAction("MyProfile", model);
+		}
+
+		[HttpGet]
+		public ActionResult ShowAllUsers()
+		{
+			ViewBag.Title = "All Registered Users";
+
+			return View("_AllUsersPartial", MyFaceService.GetAllUsers());
+		}
+
+		[HttpGet]
+		[Authorize]
+		public ActionResult ShowAllUsers(string id)
+		{
+			// id == current userName
+			return View("_AllUsersPartial", MyFaceService.GetAllUsers(id));
 		}
 
 	}
