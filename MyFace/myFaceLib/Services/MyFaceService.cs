@@ -10,13 +10,17 @@ namespace MyFaceLib.Services
 	/// A service layer to facilitate communication 
 	/// between the data context and the view
 	/// </summary>
+
 	public static class MyFaceService
+
 	{	
 		/// <summary>
 		/// Gets the list of friends based on the passed in user
 		/// </summary>
 		/// <param name="user">The user from which to get friends</param>
+
 		public static List<User> GetAllFriends(string userName)
+
 		{
 			List<User> friends = new List<User>();
 
@@ -46,7 +50,9 @@ namespace MyFaceLib.Services
 		/// </summary>
 		/// <param name="id"></param>
 		/// <returns></returns>
-		public static User GetUserByID(int id)
+
+		public static User GetUserByID( int id )
+
 		{
 			// placeholder
 			User libUser = null;
@@ -72,7 +78,9 @@ namespace MyFaceLib.Services
 		/// Throws: ArgumentNullException
 		/// </summary>
 		/// <param name="email">The email from the logged-in user</param>
-		public static User GetUserByEmail(string email)
+
+		public static User GetUserByEmail( string email )
+
 		{
 			// make sure input is valid
 			if (string.IsNullOrEmpty(email))
@@ -114,7 +122,8 @@ namespace MyFaceLib.Services
 		/// </summary>
 		/// <param name="newUser">The user to be translated to the data context</param>
 		/// <returns>bool representing successful placement (or not)</returns>
-		public static bool CreateNewUser(User newUser)
+
+		public static bool CreateNewUser( User newUser )
 		{
 			// try/catch for error catching
 			//try
