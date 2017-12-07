@@ -83,17 +83,24 @@ namespace MyFace.Controllers
 		}
 		public ActionResult ViewPosts()
 		{
-           // int userid = 0;
+            int userid = MyFaceService.GetUserByEmail(User.Identity.Name).Id;
             PostList = PostService.MakePostList(imgpath);
-            //myFaceLib.Models.User cuser = (new MyFaceService()).GetUserByID(userid); //Might use User.Identity to get current user once I figure out how I want to get their id
-            //List<Post> YourPosts = new List<Post>();
-            //YourPosts = PostList.Where(x => x.publisherid == userid).ToList(); //Will be changed once I figure out how to get posts who's publisherid is one of their friends
-            return View("PostViewing", PostList);
+            MyFaceLib.Models.User cuser = MyFaceService.GetUserByID(userid); //Might use User.Identity to get current user once I figure out how I want to get their id
+            List<Post> YourPosts = new List<Post>();
+            YourPosts = PostList.Where(x => x.PublisherId == userid).ToList();
+            if (cuser.Friends.Count > 0)
+            {
+                foreach (User f in MyFaceService.GetAllFriends(cuser.UserName))
+                {
+                    YourPosts.AddRange(PostList.Where(i => i.PublisherId == f.Id));
+                }
+            }
+            return View("PostViewing", YourPosts);
 		}
 		public ActionResult Friends()
 		{
             // get the friends list
-            List<MyFaceLib.Models.User> friends = MyFaceLib.Services.MyFaceService.GetAllFriends(MyFaceLib.Services.MyFaceService.GetUserByEmail(User.Identity.Name));
+            List<MyFaceLib.Models.User> friends = MyFaceLib.Services.MyFaceService.GetAllFriends(MyFaceLib.Services.MyFaceService.GetUserByEmail(User.Identity.Name).UserName);
             
 			// send it into the view
 			return View(friends);
