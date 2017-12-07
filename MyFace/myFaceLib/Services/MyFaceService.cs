@@ -10,20 +10,24 @@ namespace MyFaceLib.Services
 	/// A service layer to facilitate communication 
 	/// between the data context and the view
 	/// </summary>
-	public class MyFaceService
+
+	public static class MyFaceService
+
 	{	
 		/// <summary>
 		/// Gets the list of friends based on the passed in user
 		/// </summary>
 		/// <param name="user">The user from which to get friends</param>
-		public static List<User> GetAllFriends( User user )
+
+		public static List<User> GetAllFriends(string userName)
+
 		{
 			List<User> friends = new List<User>();
 
 			using (var dataContext = new MyFaceDAL.Entities())
 			{
 				// get the DAL User
-				var dataContextUser = dataContext.Users.Where(theUser => theUser.userName == user.UserName).First();
+				var dataContextUser = dataContext.Users.Where(theUser => theUser.userName == userName).First();
 
 				// get the dictionary of friends
 				var friendCollection = dataContextUser.CreateLibUser().Friends;
@@ -46,7 +50,9 @@ namespace MyFaceLib.Services
 		/// </summary>
 		/// <param name="id"></param>
 		/// <returns></returns>
+
 		public static User GetUserByID( int id )
+
 		{
 			// placeholder
 			User libUser = null;
@@ -72,7 +78,9 @@ namespace MyFaceLib.Services
 		/// Throws: ArgumentNullException
 		/// </summary>
 		/// <param name="email">The email from the logged-in user</param>
+
 		public static User GetUserByEmail( string email )
+
 		{
 			// make sure input is valid
 			if (string.IsNullOrEmpty(email))
@@ -114,6 +122,7 @@ namespace MyFaceLib.Services
 		/// </summary>
 		/// <param name="newUser">The user to be translated to the data context</param>
 		/// <returns>bool representing successful placement (or not)</returns>
+
 		public static bool CreateNewUser( User newUser )
 		{
 			// try/catch for error catching
@@ -147,6 +156,53 @@ namespace MyFaceLib.Services
 			//	// failed to add
 			//	return false;
 			//}
+		}
+
+
+		/// <summary>
+		/// Gets a list of all registered users, unless a username is specified.
+		/// </summary>
+		/// <param name="loggedInUserName">The current user. Removes the user and their friends from the list</param>
+		public static List<User> GetAllUsers(string loggedInUserName = null)
+		{
+			// create the listmodel
+			List<User> userList = new List<User>();
+
+			// connect to context
+			using (var dataContext = new MyFaceDAL.Entities())
+			{
+				// get all the users except for the one who is logged in
+				var allButCurrentUser = dataContext.Users.Select(user => user).ToList();
+
+				// add each of the DBUsers to the listModel list
+				allButCurrentUser.ForEach(user =>
+				{
+					// extension method call to convert data
+					userList.Add(user.CreateLibUser());
+				});
+			}
+
+			// if the userName was supplied, remove the friends and current user from the list
+			if (loggedInUserName != null)
+			{
+				// get the friends
+				var friendOrSelf = GetAllFriends(loggedInUserName);
+
+				// for each of the friends,
+				friendOrSelf.ForEach(known =>
+				{
+					if (userList.Contains(known))
+					{
+						// remove them
+						userList.Remove(known);
+					}
+				});
+				
+				// remove the current user
+				userList.Remove(GetUserByEmail(loggedInUserName));
+			}
+
+			return userList;
 		}
 	}
 }

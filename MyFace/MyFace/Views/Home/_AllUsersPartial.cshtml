@@ -1,0 +1,10 @@
+﻿@model List<MyFaceLib.Models.User>
+
+<div>
+	@* print each list of users *@
+	@foreach (MyFaceLib.Models.User user in Model)
+	{
+			// render the add/remove friends partial view
+			@Html.Partial("NEEDS PARTIAL VIEW IN \"_AllUsersPartial\"")
+	}
+</div>
