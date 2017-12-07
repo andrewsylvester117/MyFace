@@ -28,6 +28,13 @@ namespace MyFace.Controllers
             return View();
 		}
 
+		public ActionResult About()
+		{
+			ViewBag.Message = "Your application description page.";
+
+			return View("Post/PostForm");
+		}
+
 		public ActionResult Contact()
 		{
 			ViewBag.Message = "Your contact page.";
@@ -76,17 +83,24 @@ namespace MyFace.Controllers
 		}
 		public ActionResult ViewPosts()
 		{
-           // int userid = 0;
+            int userid = MyFaceService.GetUserByEmail(User.Identity.Name).Id;
             PostList = PostService.MakePostList(imgpath);
-            //myFaceLib.Models.User cuser = (new MyFaceService()).GetUserByID(userid); //Might use User.Identity to get current user once I figure out how I want to get their id
-            //List<Post> YourPosts = new List<Post>();
-            //YourPosts = PostList.Where(x => x.publisherid == userid).ToList(); //Will be changed once I figure out how to get posts who's publisherid is one of their friends
-            return View("PostViewing", PostList);
+            MyFaceLib.Models.User cuser = MyFaceService.GetUserByID(userid); //Might use User.Identity to get current user once I figure out how I want to get their id
+            List<Post> YourPosts = new List<Post>();
+            YourPosts = PostList.Where(x => x.PublisherId == userid).ToList();
+            if (cuser.Friends.Count > 0)
+            {
+                foreach (User f in MyFaceService.GetAllFriends(cuser.UserName))
+                {
+                    YourPosts.AddRange(PostList.Where(i => i.PublisherId == f.Id));
+                }
+            }
+            return View("PostViewing", YourPosts);
 		}
 		public ActionResult Friends()
 		{
             // get the friends list
-            List<MyFaceLib.Models.User> friends = MyFaceLib.Services.MyFaceService.GetAllFriends(MyFaceLib.Services.MyFaceService.GetUserByEmail(User.Identity.Name));
+            List<MyFaceLib.Models.User> friends = MyFaceLib.Services.MyFaceService.GetAllFriends(MyFaceLib.Services.MyFaceService.GetUserByEmail(User.Identity.Name).UserName);
             
 			// send it into the view
 			return View(friends);
@@ -111,8 +125,8 @@ namespace MyFace.Controllers
 		[HttpPost]
 		public ActionResult CreateNewUser(User model)
 		{
-            DateTime dob = new DateTime();
 
+			DateTime dob = new DateTime();
 			// results =  1 realname, 2 status, 3 dob, 4 zodiak, 5 isMale, 6 descr
 			model.RealName = Request.Form.Get(1);
 			model.Status = Request.Form.Get(2);
@@ -133,22 +147,21 @@ namespace MyFace.Controllers
 			return RedirectToAction("MyProfile", model);
 		}
 
-		public ActionResult Posts(string userId)
+		[HttpGet]
+		public ActionResult ShowAllUsers()
 		{
+			ViewBag.Title = "All Registered Users";
 
-			return View();
+			return View("_AllUsersPartial", MyFaceService.GetAllUsers());
 		}
 
-		public ActionResult About (string userId)
+		[HttpGet]
+		[Authorize]
+		public ActionResult ShowAllUsers(string id)
 		{
-
-			return View();
+			// id == current userName
+			return View("_AllUsersPartial", MyFaceService.GetAllUsers(id));
 		}
 
-		public ActionResult Photos(string userId)
-		{
-
-			return View();
-		}
 	}
 }
