@@ -28,13 +28,6 @@ namespace MyFace.Controllers
             return View();
 		}
 
-		public ActionResult About()
-		{
-			ViewBag.Message = "Your application description page.";
-
-			return View("Post/PostForm");
-		}
-
 		public ActionResult Contact()
 		{
 			ViewBag.Message = "Your contact page.";
@@ -140,5 +133,22 @@ namespace MyFace.Controllers
 			return RedirectToAction("MyProfile", model);
 		}
 
+		public ActionResult Posts(string userId)
+		{
+
+			return View();
+		}
+
+		public ActionResult About (string userId)
+		{
+
+			return View();
+		}
+
+		public ActionResult Photos(string userId)
+		{
+
+			return View();
+		}
 	}
 }

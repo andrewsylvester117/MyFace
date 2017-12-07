@@ -38,13 +38,17 @@
 	background-color: gray;
 	color: lightgray;
 	align-content: center;
+	text-align: center;
+	padding: 10px;
 }
 
-.profilePictureContainer img{
-	width: 100%;
-	height: 100%;
-	border-radius: 10px;
-}
+	.profilePictureContainer img {
+		width: 100%;
+		height: 100%;
+		border-radius: 10px;
+		border: solid 3px;
+		border-color: black;
+	}
 
 .Username{
 	margin:auto;	
@@ -71,6 +75,10 @@
 	width: 75%;
 }
 
+.navbar-inverse{
+
+}
+
 .navbar-inverse .navbar-nav > li > a > img {
 	height: 30px;
 }
@@ -83,7 +91,7 @@
 	background-color: gray;
 	/*height: 35px;
 	width: 55%;*/
-	border-radius: 5px;
+	border-radius: 10px;
 	margin: auto;	
 	margin-top: 35px;
 	color:black;
@@ -95,14 +103,32 @@
 }
 
 	.userInfoNav li {
-		background-color: green;
 		display: inline;
-		margin: 100px;
-		font-size: 35px;
+		margin: 65px;
+		font-size: 30px;
 		font-family: "Brush Script MT", cursive;
-	}
+		}
 
-.postFeed{
-	background-color: orange;
+
+.feedContainer{
+	background-color: gray;
+	height: 650px;
+	width: 75%;
+	margin-top: 55px;
+	margin: 55px auto 55px auto;
+	border-radius: 10px;
+	color: black;
+}
+
+a{
+	color: black;
+}
+
+a:visited{
+	color: black;
+}
+
+a:hover{
+	color:purple;
 }
 
