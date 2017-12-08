@@ -113,10 +113,10 @@ namespace MyFaceLib.Services
                         Textcontent = p.postText
                     };
                     
-                    if (db.Images.Where(x => x.postid == p.postId).First()!= null)
-                    {
-                        px.Imagefname = db.Images.Where(x => p.postId == x.postid).First().filename;
-                    }
+                    //if (db.Images.Where(x => x.postid == p.postId).First()!= null)
+                    //{
+                    //    px.Imagefname = db.Images.Where(x => p.postId == x.postid).First().filename;
+                    //}
                     outlist.Add(px);
 				}
 

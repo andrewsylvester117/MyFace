@@ -90,7 +90,6 @@
 
 .row {
 	margin: 35px;
-	background-color: yellow;
 }
 
 .postSomething {
@@ -161,7 +160,19 @@ a:hover{
 	color:purple;
 }
 
-.aboutUser{
-	background-color: orange;
+.aboutHeader {
+	
+}
 
+.aboutHeader p2{
+		font-family: "Brush Script MT", cursive;
+}
+
+.aboutUser{
+
+}
+
+.aboutUser ul{
+
+	list-style: none;
 }

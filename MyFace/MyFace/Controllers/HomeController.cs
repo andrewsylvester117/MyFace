@@ -163,5 +163,14 @@ namespace MyFace.Controllers
 			return View(user);
 		}
 
+		public ActionResult Posts()
+		{
+			MyFaceLib.Models.User user = MyFaceService.GetUserByEmail(User.Identity.Name);
+
+
+			return View(user);
+		}
+
+
 	}
 }

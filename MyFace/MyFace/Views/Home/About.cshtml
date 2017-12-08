@@ -3,14 +3,15 @@
 	ViewBag.Title = "About";
 	Layout = "~/Views/Shared/_Layout2.cshtml";
 }
-<h2>@ViewBag.Title.</h2>
 
-<h2>About User</h2>
+<div class="aboutHeader">
+	<h2>About:<br /> @Model.RealName</h2>
+</div>
 <div class="aboutUser">
 	<ul>
 		<li><p4>Name: @Model.RealName</p4></li>
 		<li><p4>Email: @Model.Email</p4></li>
 		<li><p4>Birthday: @Model.Dob</p4></li>
-		<li><p4>Address: @Model.Address1</p4></li>
+		<li><p4>Description: @Model.Description</p4></li>
 	</ul>
 </div>
