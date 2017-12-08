@@ -28,13 +28,6 @@ namespace MyFace.Controllers
             return View();
 		}
 
-		public ActionResult About()
-		{
-			ViewBag.Message = "Your application description page.";
-
-			return View("Post/PostForm");
-		}
-
 		public ActionResult Contact()
 		{
 			ViewBag.Message = "Your contact page.";
@@ -161,6 +154,13 @@ namespace MyFace.Controllers
 		{
 			// id == current userName
 			return View("_AllUsersPartial", MyFaceService.GetAllUsers(id));
+		}
+
+		public ActionResult About()
+		{
+			MyFaceLib.Models.User user = MyFaceService.GetUserByEmail(User.Identity.Name);
+
+			return View(user);
 		}
 
 	}
