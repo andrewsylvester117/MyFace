@@ -3,13 +3,10 @@
 	color: gray;
 }
 
-.sectionContainer{
-	text-align:center;
-}
-
 .page-header{
 	border-bottom: none;
 	display: inline-block;
+	margin: auto;
 }
 
 	.page-header img{
@@ -81,6 +78,38 @@
 
 .navbar-inverse .navbar-nav > li > a > img {
 	height: 30px;
+}
+
+.sectionContainer {
+    text-align: center;
+    background-color: darkslategray;
+    color: black;
+    border-radius: 35px;
+	padding: 35px;
+}
+
+.row {
+	margin: 35px;
+	background-color: yellow;
+}
+
+.postSomething {
+	display: inline-block;
+	background-color: darkslategray;
+	font-family: "Brush Script MT", cursive;
+	font-size: 25px;
+	border-radius: 20px;
+	margin: 10px;
+}
+
+.postSomething p4{
+	margin: 10px;
+}
+
+.jumbotron {
+	margin: 35px;
+	border-radius: 15px;
+	background-color: gray;
 }
 
 .bodyStuff{
